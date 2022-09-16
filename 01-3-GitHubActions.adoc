@@ -9,6 +9,7 @@ Conitnuous integration (CI) is at the core of Agile development. The act of writ
 . Select _set up a workflow yourself_ linked just below the title.
 +
 image::figs/githubactions1.png[]
+Workflows are automated processes to run one or more jobs. Each .yml file contains a single workflow.
 
 . Modify the contents of the main.yml to have the following content:
 
@@ -45,7 +46,17 @@ jobs:
 [NOTE]
 The configurations in this YML file are used to determine the environment in which to run the specified GitHub action. Though not required, you will want these configurations to mirror the system you're developing on if you implement build actions for the branches you are solely responsible for to make debugging errors easier. On branches with multiple developers, use configurations that have as much commonality as possible.
 
-All that's left to do is test to make sure it works. Go to local working copy of your repository and initiate a fetch, add, commit, status and push command in that order. 
+Each part of the .yml is described below. For more detailed coverage of GitHub Actions, visit the documentation page link:https://docs.github.com/en/actions[here].
+[horizontal]
+name:: Name of the workflow or work step as it will appear in the Actions and workflow insight of the GitHub repository.
+on[event]:: Trigger event that causes execution of workflow.
+jobs:: Groups all jobs that run in the workflow.
+runs-on:: Configures job to run on latest version of specified OS.
+steps:: Groups together steps of parent job.
+uses:: Specifies what action will run on the particular step
+run:: Specifies a command to run.
+
+All that's left to do is test to make sure it works. Go to local working copy of your repository and initiate a pull, add, commit, status and push command in that order. 
 
 The result of workflow runs can be seen under the _Actions_ tab of the repository.
 
