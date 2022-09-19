@@ -44,7 +44,7 @@ apply plugin: 'application'
 A plugin is simply a set of useful tasks that bundled up that extend our project's capabilities. There are two types of plugins:
 [horizontal]
 Script:: additional build script that is declarative in manipulating the build.
-Binary:: Classes that implement the pugin interface and programmatic in manipulating the build.
+Binary:: Classes that implement the plugin interface and programmatic in manipulating the build.
 +
 More information on plugins can be found link:https://docs.gradle.org/current/userguide/plugins.html[here].
 
